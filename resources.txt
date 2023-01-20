@@ -1,0 +1,5 @@
+#All the NAPALM calls
+https://napalm.readthedocs.io/en/latest/base.html
+
+#Ansible Cisco IOS reference
+https://github.com/ansible-collections/cisco.ios

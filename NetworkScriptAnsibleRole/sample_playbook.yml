@@ -1,0 +1,15 @@
+--- # Sample playbook to get myself back into the groove of ansible
+- name: Get facts
+  hosts: TestDummy1
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - name: Gather all L3 interface facts and grabs the IP address of the Ethernet0/2 interface
+      cisco.ios.ios_facts:
+        gather_subset: min
+        gather_network_resources: l3_interfaces
+      register: command_output
+
+    - name: Print previous command output (AKA the IP address of the Ethernet0/2 interface)
+      ansible.builtin.debug:
+        var: command_output.ansible_facts.ansible_network_resources.l3_interfaces
